@@ -39,15 +39,21 @@ this.update = function() {
     // {
     //     this.x+=5;
     // }
-    if(mouse.x-this.x<50 && this.radius<=30)
+    if(mouse.x-this.x<50 && mouse.x-this.x>-50 && mouse.y-this.y<50 && mouse.y-this.y>-50)
     {
+        if(this.radius<35)
         this.radius+=1;
+    }
+    else
+    {
+        if(this.radius>radius)
+        this.radius-=1;
     }
     this.create();
 }
 }
 var circleArray=[];
-for(var i=0;i<200;i++)
+for(var i=0;i<800;i++)
 {
 var radius=Math.random()*30+2;
 var x=Math.random()*(innerWidth-radius*3)+radius;
